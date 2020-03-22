@@ -1,3 +1,18 @@
+# omise_api_test
+Test Omise API in CakePHP
+
+# Install
+$ cd ~
+$ php composer.phar create-project --prefer-dist cakephp/app:^3.8 /var/www/html/project/omise_api_test
+
+$ cd /var/www/html/project
+composer create-project --prefer-dist cakephp/app:^3.8 /var/www/html/project/omise_api_test
+
+# Run
+$ cd /var/www/html/project/omise_api_test
+$ bin/cake server -p 3000
+
+
 # CakePHP Application Skeleton
 
 [![Build Status](https://img.shields.io/travis/cakephp/app/master.svg?style=flat-square)](https://travis-ci.org/cakephp/app)
