@@ -12,6 +12,9 @@ composer create-project --prefer-dist cakephp/app:^3.8 /var/www/html/project/omi
 $ cd /var/www/html/project/omise_api_test
 $ bin/cake server -p 3000
 
+# List
+http://localhost:3000/omise_api_test/articles/index
+
 
 # CakePHP Application Skeleton
 
