@@ -37,8 +37,7 @@ class AppController extends Controller
      *
      * @return void
      */
-    public function initialize()
-    {
+    public function initialize() {
         parent::initialize();
 
         $this->loadComponent('RequestHandler', [
@@ -52,4 +51,21 @@ class AppController extends Controller
          */
         //$this->loadComponent('Security');
     }
+
+    // Add the following method.
+
+    public function edit($slug) {
+      $article = $this->Articles->findBySlug($slug)->firstOrFail();
+      if ($this->request->is(['post', 'put'])) {
+        $this->Articles->patchEntity($article, $this->request->getData());
+        if ($this->Articles->save($article)) {
+          $this->Flash->success(__('Your article has been updated.'));
+          return $this->redirect(['action' => 'index']);
+        }
+        $this->Flash->error(__('Unable to update your article.'));
+      }
+
+      $this->set('article', $article);
+    }
+
 }
