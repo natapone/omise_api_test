@@ -8,9 +8,13 @@ $ php composer.phar create-project --prefer-dist cakephp/app:^3.8 /var/www/html/
 $ cd /var/www/html/project
 composer create-project --prefer-dist cakephp/app:^3.8 /var/www/html/project/omise_api_test
 
+# Install Omise module from https://github.com/omise/omise-php
+$ composer require omise/omise-php
+
+
 # Run
 $ cd /var/www/html/project/omise_api_test
-$ bin/cake server -p 3000 
+$ bin/cake server -p 3000
 
 # URL
 List: http://localhost:3000/omise_api_test/articles/index
