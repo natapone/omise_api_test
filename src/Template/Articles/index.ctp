@@ -10,9 +10,9 @@
       <th>Action</th>
     </tr>
 
-    <!-- Here is where we iterate through our $articles query object, printing out article info -->
+<!-- Here is where we iterate through our $articles query object, printing out article info -->
 
-    <?php foreach ($articles as $article): ?>
+  <?php foreach ($articles as $article): ?>
     <tr>
         <td>
             <?= $this->Html->link($article->title, ['action' => 'view', $article->slug]) ?>
@@ -22,7 +22,12 @@
         </td>
         <td>
             <?= $this->Html->link('Edit', ['action' => 'edit', $article->slug]) ?>
+            <?= $this->Form->postLink(
+                'Delete',
+                ['action' => 'delete', $article->slug],
+                ['confirm' => 'Are you sure?'])
+            ?>
         </td>
     </tr>
-    <?php endforeach; ?>
+  <?php endforeach; ?>
 </table>

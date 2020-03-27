@@ -42,14 +42,14 @@ class ArticlesController extends AppController {
     $this->set('article', $article);
   }
 
-  // public function index() {
-  //   $this->loadComponent('Paginator');
-  //   $articles = $this->Paginator->paginate($this->Articles->find());
-  //   $this->set(compact('articles'));
-  // }
+  public function delete($slug) {
+    $this->request->allowMethod(['post', 'delete']);
 
-  // public function view($slug = null) {
-  //   $article = $this->Articles->findBySlug($slug)->firstOrFail();
-  //   $this->set(compact('article'));
-  // }
+    $article = $this->Articles->findBySlug($slug)->firstOrFail();
+    if ($this->Articles->delete($article)) {
+      $this->Flash->success(__('The {0} article has been deleted.', $article->title));
+      return $this->redirect(['action' => 'index']);
+    }
+  }
+
 }
