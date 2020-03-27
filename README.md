@@ -10,11 +10,12 @@ composer create-project --prefer-dist cakephp/app:^3.8 /var/www/html/project/omi
 
 # Run
 $ cd /var/www/html/project/omise_api_test
-$ bin/cake server -p 3000
+$ bin/cake server -p 3000 
 
 # URL
 List: http://localhost:3000/omise_api_test/articles/index
 Add article: http://localhost:3000/omise_api_test/articles/add
+Article by ID: http://localhost:3000/omise_api_test/article_id/3
 
 # CakePHP Application Skeleton
 

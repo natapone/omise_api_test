@@ -24,6 +24,13 @@ class ArticlesController extends AppController {
     $this->set(compact('article'));
   }
 
+  public function viewById($id) {
+    $article = $this->Articles->get($id);
+
+    $this->set(compact('article'));
+    $this->render('view');
+  }
+
   public function add() {
     $article = $this->Articles->newEntity();
     if ($this->request->is('post')) {
