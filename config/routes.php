@@ -78,6 +78,8 @@ Router::scope('/', function (RouteBuilder $routes) {
     ->setPatterns(['id' => '\d+'])
     ->setPass(['id']);
 
+    $routes->connect('/payment/*', ['controller' => 'Payment', 'action' => 'index']);
+
     /**
      * Connect catchall routes for all controllers.
      *
